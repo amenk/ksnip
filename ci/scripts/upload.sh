@@ -7,7 +7,7 @@ export UPLOADTOOL_BODY="Travis CI build log: https://travis-ci.org/${TRAVIS_REPO
 
 # Mark continuous builds as pre-release in github
 if [[ "${VERSION_SUFFIX}" == "continuous" ]]; then
-    export UPLOADTOOL_ISPRERELEASE="true"
+    export UPLOADTOOL_ISPRERELEASE="false"
 fi
 
 
