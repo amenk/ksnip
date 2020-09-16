@@ -6,9 +6,9 @@ wget -c https://github.com/damirporobic/uploadtool/raw/master/upload.sh
 export UPLOADTOOL_BODY="Travis CI build log: https://travis-ci.org/${TRAVIS_REPO_SLUG}/builds/${TRAVIS_BUILD_ID}/"
 
 # Mark continuous builds as pre-release in github
-if [[ "${VERSION_SUFFIX}" == "continuous" ]]; then
-    export UPLOADTOOL_ISPRERELEASE="false"
-fi
+# if [[ "${VERSION_SUFFIX}" == "continuous" ]]; then
+    # export UPLOADTOOL_ISPRERELEASE="false"
+# fi
 
 
 if [[ "${BINARY_TYPE}" == "AppImage" ]]; then
