@@ -18,11 +18,10 @@ jobs:
     - name: Add msbuild to PATH
       uses: microsoft/setup-msbuild@v1.0.2
 
-    - name: install 7zip
-      run: pacman -Sy --noconfirm --noprogressbar --needed p7zip
-
-    - name: install git
-      run: pacman -Sy --noconfirm --noprogressbar --needed p7zip
+    - uses: msys2/setup-msys2@v2
+    - shell: msys2 {0}
+      run: |
+        pacman -Sy --noconfirm --noprogressbar --needed p7zip git
 
     - uses: actions/checkout@v2
 
