@@ -19,3 +19,5 @@ jobs:
 
     - name: Debugging with tmate
       uses: mxschmitt/action-tmate@v3.1
+      with:
+        sudo: false
