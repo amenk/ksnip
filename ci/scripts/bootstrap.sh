@@ -25,16 +25,16 @@ elif [[ "${BINARY_TYPE}" == "exe" ]]; then
     wget --quiet -O qtsvg.7z "${QT_BASE_URL}qtsvg-Windows-Windows_10-MSVC2015-Windows-Windows_10-X86.7z"
 	  wget --quiet -O openssl.zip "https://indy.fulgan.com/SSL/openssl-1.0.2q-i386-win32.zip"
 
-    7z x qtbase.7z -o/c/qt
-    7z x qtwinextras.7z -o/c/qt
-    7z x qttools.7z -o/c/qt
-    7z x qttranslations.7z -o/c/qt
-    7z x qtsvg.7z -o/c/qt
+    7z x qtbase.7z -o~/work/qt
+    7z x qtwinextras.7z -o~/work/qt
+    7z x qttools.7z -o~/work/qt
+    7z x qttranslations.7z -o~/work/qt
+    7z x qtsvg.7z -o~/work/qt
 
-    7z x openssl.zip -o/c/openssl
+    7z x openssl.zip -o~/work/openssl
 
     # windeployqt fails to find the binaries so we link the binaries where its looking for it
-    WINDEPLOYQT_QT_DIR="/c/Users/qt/work"
+    WINDEPLOYQT_QT_DIR="~/work/qt/work"
     mkdir -p $WINDEPLOYQT_QT_DIR
     ln -s $QTDIR $WINDEPLOYQT_QT_DIR/install
 fi
